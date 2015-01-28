@@ -21,11 +21,8 @@ align 4                       ; the code must be 4 byte aligned
 
 loader:                       ; the loader label (defined as entry point in linker script)
     mov esp, kernel_stack + KERNEL_STACK_SIZE	   
-    extern sum_of_three   ; the function sum_of_three is defined elsewhere
-    push dword 3            ; arg3
-    push dword 2            ; arg2
-    push dword 1            ; arg1
-    call sum_of_three       ; call the function, the result will be in eax
+    extern kernel_main   ; the function sum_of_three is defined elsewhere
+    call kernel_main       ; call the function, the result will be in eax
 .loop:
 	jmp .loop                 ; loop forever
 

@@ -1,6 +1,6 @@
 OBJECTS = loader.o kmain.o
-CC = gcc
-CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
+CC = g++
+CFLAGS = -m32 -ffreestanding -O2 -Wall -Wextra -Werror -fno-exceptions -fno-rtti -c
 LDFLAGS = -T link.ld -melf_i386
 AS = nasm
 ASFLAGS = -f elf
@@ -26,7 +26,7 @@ os.iso: kernel.elf
 run: os.iso
 	bochs -f bochsrc.txt -q
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS)  $< -o $@
 
 %.o: %.s
