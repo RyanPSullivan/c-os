@@ -1,4 +1,4 @@
-OBJECTS = loader.o kmain.o
+OBJECTS = loader.o kmain.o terminal/terminal.o
 CC = g++
 CFLAGS = -m32 -ffreestanding -O2 -Wall -Wextra -Werror -fno-exceptions -fno-rtti -c
 LDFLAGS = -T link.ld -melf_i386
