@@ -1,4 +1,4 @@
-# An Operating System Written Predominantly in C++
+# An Operating System Written Predominantly in C
 
 # Features
 *Terminal Output
