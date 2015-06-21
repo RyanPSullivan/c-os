@@ -24,7 +24,7 @@ os.iso: kernel.elf
                     iso
 
 run: os.iso
-	bochs -f bochsrc.txt -q
+	bochs -f ../config/bochsrc -q
 
 %.o: %.cpp
 	$(CC) $(CFLAGS)  $< -o $@
